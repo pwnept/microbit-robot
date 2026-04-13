@@ -5,6 +5,7 @@ namespace robot.drivers {
     export interface LEDStrip {
         start(): void
         setColor(red: number, green: number, blue: number): void
+        setPixelColor(index: number, red: number, green: number, blue: number): void
     }
 
     export interface Sonar {

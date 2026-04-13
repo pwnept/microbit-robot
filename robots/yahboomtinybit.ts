@@ -16,6 +16,7 @@ namespace robot {
     class YahboomTinybitRobot extends robots.Robot {
         constructor() {
             super(0x345f8369)
+            this.leds = new drivers.WS2812bLEDStrip(DigitalPin.P12, 2)
             this.sonar = new drivers.SR04Sonar(DigitalPin.P15, DigitalPin.P16)
             this.lineDetectors = new drivers.DigitalPinLineDetectors(
                 DigitalPin.P13,
@@ -104,7 +105,10 @@ namespace robot {
         }
 
         motorRun(left: number, right: number): void {
-            const speed = (left + right) >> 1
+            // Scale from 0-100 to 0-255 for I2C PWM
+            left = Math.round(left * 255 / 100)
+            right = Math.round(right * 255 / 100)
+
             const spin = Math.sign(left) != Math.sign(right)
             if (left === 0 && right === 0) this.setPwmMotor(0, 0, 0)
             else if (left >= 0 && right >= 0) this.setPwmMotor(1, left, right)

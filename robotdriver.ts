@@ -168,6 +168,14 @@ namespace robot {
             this.targetColor = rgb
         }
 
+        public setPixelColor(index: number, rgb: number) {
+            const red = (rgb >> 16) & 0xff
+            const green = (rgb >> 8) & 0xff
+            const blue = rgb & 0xff
+            const leds = this.robot.leds
+            if (leds) leds.setPixelColor(index, red, green, blue)
+        }
+
         private updateColor() {
             const targetColor = this.targetColor
             const currentColor = this.currentColor

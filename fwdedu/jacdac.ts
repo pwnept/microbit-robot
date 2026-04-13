@@ -8,6 +8,9 @@ namespace robot.drivers {
         setColor(red: number, green: number, blue: number) {
             fwdSensors.ledRing.setAll(red << 16 | green << 8 | blue)
         }
+
+        setPixelColor(index: number, red: number, green: number, blue: number) {
+        }
     }
 
     export class JacdacSonar implements Sonar {
