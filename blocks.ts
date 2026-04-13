@@ -108,6 +108,22 @@ namespace robot {
     }
 
     /**
+     * Sets the color of an individual LED pixel
+     * @param index the pixel index (0 or 1 for rear neopixels)
+     * @param rgb the color
+     */
+    //% blockid="mbitrobotsetpixelcolor" block="robot set pixel $index color $rgb"
+    //% group="Accessories"
+    //% weight=97
+    //% index.min=0
+    //% index.max=1
+    //% rgb.shadow=colorNumberPicker
+    export function setPixelColor(index: number, rgb: number) {
+        const robot = RobotDriver.instance()
+        robot.setPixelColor(index, rgb)
+    }
+
+    /**
      * Play a tone through the robot speaker
      */
     //% blockid="mbitrobotplaytone" block="robot play tone $frequency for $duration"

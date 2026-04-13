@@ -20,5 +20,15 @@ namespace robot.drivers {
             }
             ws2812b.sendBuffer(this.ledsBuffer, this.pin)
         }
+
+        setPixelColor(index: number, red: number, green: number, blue: number) {
+            if (index < 0 || index >= this.count) return
+            const offset = index * 3
+            const b = this.ledsBuffer
+            b[offset] = green
+            b[offset + 1] = red
+            b[offset + 2] = blue
+            ws2812b.sendBuffer(this.ledsBuffer, this.pin)
+        }
     }
 }
