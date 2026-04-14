@@ -31,6 +31,16 @@ enum RobotLineDetector {
 }
 
 /**
+ * Index of the rear neopixel LEDs
+ */
+enum RobotNeopixel {
+    //% block="right"
+    Right = 0,
+    //% block="left"
+    Left = 1,
+}
+
+/**
  * Robot driver builtin assists
  */
 enum RobotAssist {

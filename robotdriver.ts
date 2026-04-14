@@ -64,6 +64,7 @@ namespace robot {
         configDrift: boolean = undefined
         private targetColor = 0
         currentColor = 0
+        private tailLightsColor = -1
         currentSpeed: number = 0
         private targetSpeed: number = 0
         currentTurnRatio = 0
@@ -165,7 +166,25 @@ namespace robot {
         }
 
         public setColor(rgb: number) {
+            this.tailLightsColor = -1
             this.targetColor = rgb
+        }
+
+        public setHeadlightsColor(rgb: number) {
+            if (this.tailLightsColor < 0)
+                this.tailLightsColor = this.currentColor
+            this.targetColor = rgb
+        }
+
+        public setTailLightsColor(rgb: number) {
+            this.tailLightsColor = rgb
+            const leds = this.robot.leds
+            if (leds) {
+                const r = (rgb >> 16) & 0xff
+                const g = (rgb >> 8) & 0xff
+                const b = rgb & 0xff
+                leds.setColor(r, g, b)
+            }
         }
 
         public setPixelColor(index: number, rgb: number) {
@@ -188,8 +207,10 @@ namespace robot {
             this.currentColor = (red << 16) | (green << 8) | blue
 
             this.robot.headlightsSetColor(red, green, blue)
-            const leds = this.robot.leds
-            if (leds) leds.setColor(red, green, blue)
+            if (this.tailLightsColor < 0) {
+                const leds = this.robot.leds
+                if (leds) leds.setColor(red, green, blue)
+            }
         }
 
         private updateSpeed() {
