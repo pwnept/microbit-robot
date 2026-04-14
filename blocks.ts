@@ -108,17 +108,37 @@ namespace robot {
     }
 
     /**
-     * Sets the color of an individual LED pixel
-     * @param index the pixel index (0 or 1 for rear neopixels)
-     * @param rgb the color
+     * Sets the front headlight color only (does not affect rear neopixels)
+     */
+    //% blockid="mbitrobotsetheadlightscolor" block="robot set headlights color $rgb"
+    //% group="Accessories"
+    //% weight=97
+    //% rgb.shadow=colorNumberPicker
+    export function setHeadlightsColor(rgb: number) {
+        const robot = RobotDriver.instance()
+        robot.setHeadlightsColor(rgb)
+    }
+
+    /**
+     * Sets both rear neopixels to the same color (does not affect front headlights)
+     */
+    //% blockid="mbitrobotsetTailLightscolor" block="robot set tail lights color $rgb"
+    //% group="Accessories"
+    //% weight=96
+    //% rgb.shadow=colorNumberPicker
+    export function setTailLightsColor(rgb: number) {
+        const robot = RobotDriver.instance()
+        robot.setTailLightsColor(rgb)
+    }
+
+    /**
+     * Sets the color of an individual rear neopixel
      */
     //% blockid="mbitrobotsetpixelcolor" block="robot set pixel $index color $rgb"
     //% group="Accessories"
-    //% weight=97
-    //% index.min=0
-    //% index.max=1
+    //% weight=95
     //% rgb.shadow=colorNumberPicker
-    export function setPixelColor(index: number, rgb: number) {
+    export function setPixelColor(index: RobotNeopixel, rgb: number) {
         const robot = RobotDriver.instance()
         robot.setPixelColor(index, rgb)
     }
