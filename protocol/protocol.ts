@@ -41,6 +41,30 @@ enum RobotNeopixel {
 }
 
 /**
+ * Named colors for robot LEDs
+ */
+enum RobotColor {
+    //% block="white"
+    White = 0xffffff,
+    //% block="black"
+    Black = 0x000000,
+    //% block="purple"
+    Purple = 0x7f00ff,
+    //% block="blue"
+    Blue = 0x0000ff,
+    //% block="green"
+    Green = 0x00ff00,
+    //% block="yellow"
+    Yellow = 0xffff00,
+    //% block="orange"
+    Orange = 0xff8000,
+    //% block="red"
+    Red = 0xff0000,
+    //% block="pink"
+    Pink = 0xff00ff,
+}
+
+/**
  * Robot driver builtin assists
  */
 enum RobotAssist {
