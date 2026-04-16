@@ -24,15 +24,15 @@ namespace robot.test {
         input.onButtonPressed(Button.A, () => {
             const d = 1000
             playTone(440, 200)
-            setColor(0xff0000)
+            setPartColor(RobotLEDPart.All,0xff0000)
             motorTank(-100, 100)
             pause(d)
             playTone(440, 200)
-            setColor(0xff0000)
+            setPartColor(RobotLEDPart.All,0xff0000)
             motorTank(100, -100)
             pause(d)
             playTone(840, 200)
-            setColor(0x000000)
+            setPartColor(RobotLEDPart.All,0x000000)
             motorStop()
         })
 
