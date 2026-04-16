@@ -119,9 +119,9 @@ namespace robot {
     /**
      * Sets the color of a robot LED group using a color picker
      */
-    //% blockid="mbitrobotsetpartcolor" block="robot set $part color $rgb"
+    //% blockid="mbitrobotsetpartcolor" block="robot set $part hex color $rgb"
     //% group="Accessories"
-    //% weight=98
+    //% weight=97
     //% rgb.shadow=colorNumberPicker
     export function setPartColor(part: RobotLEDPart, rgb: number) {
         applyColorToPart(part, rgb)
@@ -132,7 +132,7 @@ namespace robot {
      */
     //% blockid="mbitrobotsetpartnamedcolor" block="robot set $part color $color"
     //% group="Accessories"
-    //% weight=97
+    //% weight=98
     export function setPartNamedColor(part: RobotLEDPart, color: RobotColor) {
         applyColorToPart(part, color)
     }
