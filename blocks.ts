@@ -95,96 +95,46 @@ namespace robot {
         robot.armOpen(index, opening)
     }
 
+    function applyColorToPart(part: RobotLEDPart, rgb: number) {
+        const r = RobotDriver.instance()
+        switch (part) {
+            case RobotLEDPart.All:
+                r.setColor(rgb)
+                break
+            case RobotLEDPart.Headlights:
+                r.setHeadlightsColor(rgb)
+                break
+            case RobotLEDPart.TailLights:
+                r.setTailLightsColor(rgb)
+                break
+            case RobotLEDPart.TailLightRight:
+                r.setPixelColor(RobotNeopixel.Right, rgb)
+                break
+            case RobotLEDPart.TailLightLeft:
+                r.setPixelColor(RobotNeopixel.Left, rgb)
+                break
+        }
+    }
+
     /**
-     * Sets the LED color
+     * Sets the color of a robot LED group using a color picker
      */
-    //% blockid="mbitrobotsetcolor" block="robot set color $rgb"
+    //% blockid="mbitrobotsetpartcolor" block="robot set $part color $rgb"
     //% group="Accessories"
     //% weight=98
     //% rgb.shadow=colorNumberPicker
-    export function setColor(rgb: number) {
-        const robot = RobotDriver.instance()
-        robot.setColor(rgb)
+    export function setPartColor(part: RobotLEDPart, rgb: number) {
+        applyColorToPart(part, rgb)
     }
 
     /**
-     * Sets all lights to a named color
+     * Sets the color of a robot LED group using a named color
      */
-    //% blockid="mbitrobotsetnamedcolor" block="robot set color $color"
+    //% blockid="mbitrobotsetpartnamedcolor" block="robot set $part color $color"
     //% group="Accessories"
     //% weight=97
-    export function setNamedColor(color: RobotColor) {
-        const robot = RobotDriver.instance()
-        robot.setColor(color)
-    }
-
-    /**
-     * Sets the front headlight color only (does not affect rear neopixels)
-     */
-    //% blockid="mbitrobotsetheadlightscolor" block="robot set headlights color $rgb"
-    //% group="Accessories"
-    //% weight=96
-    //% rgb.shadow=colorNumberPicker
-    export function setHeadlightsColor(rgb: number) {
-        const robot = RobotDriver.instance()
-        robot.setHeadlightsColor(rgb)
-    }
-
-    /**
-     * Sets the front headlights to a named color (does not affect rear neopixels)
-     */
-    //% blockid="mbitrobotsetheadlightsnamedcolor" block="robot set headlights color $color"
-    //% group="Accessories"
-    //% weight=95
-    export function setHeadlightsNamedColor(color: RobotColor) {
-        const robot = RobotDriver.instance()
-        robot.setHeadlightsColor(color)
-    }
-
-    /**
-     * Sets both rear neopixels to the same color (does not affect front headlights)
-     */
-    //% blockid="mbitrobotsetTailLightscolor" block="robot set tail lights color $rgb"
-    //% group="Accessories"
-    //% weight=94
-    //% rgb.shadow=colorNumberPicker
-    export function setTailLightsColor(rgb: number) {
-        const robot = RobotDriver.instance()
-        robot.setTailLightsColor(rgb)
-    }
-
-    /**
-     * Sets both rear neopixels to a named color (does not affect front headlights)
-     */
-    //% blockid="mbitrobotsetTailLightsnamedcolor" block="robot set tail lights color $color"
-    //% group="Accessories"
-    //% weight=93
-    export function setTailLightsNamedColor(color: RobotColor) {
-        const robot = RobotDriver.instance()
-        robot.setTailLightsColor(color)
-    }
-
-    /**
-     * Sets the color of an individual rear neopixel
-     */
-    //% blockid="mbitrobotsetpixelcolor" block="robot set tail light individual $index color $rgb"
-    //% group="Accessories"
-    //% weight=92
-    //% rgb.shadow=colorNumberPicker
-    export function setPixelColor(index: RobotNeopixel, rgb: number) {
-        const robot = RobotDriver.instance()
-        robot.setPixelColor(index, rgb)
-    }
-
-    /**
-     * Sets an individual rear neopixel to a named color
-     */
-    //% blockid="mbitrobotsetpixelnamedcolor" block="robot set tail light individual $index color $color"
-    //% group="Accessories"
-    //% weight=91
-    export function setPixelNamedColor(index: RobotNeopixel, color: RobotColor) {
-        const robot = RobotDriver.instance()
-        robot.setPixelColor(index, color)
+    export function setPartNamedColor(part: RobotLEDPart, color: RobotColor) {
+        applyColorToPart(part, color)
     }
 
     /**

@@ -41,6 +41,22 @@ enum RobotNeopixel {
 }
 
 /**
+ * Which LED group to control
+ */
+enum RobotLEDPart {
+    //% block="all"
+    All = 0,
+    //% block="headlights"
+    Headlights = 1,
+    //% block="tail lights"
+    TailLights = 2,
+    //% block="tail light right"
+    TailLightRight = 3,
+    //% block="tail light left"
+    TailLightLeft = 4,
+}
+
+/**
  * Named colors for robot LEDs
  */
 enum RobotColor {
