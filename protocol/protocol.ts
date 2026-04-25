@@ -68,6 +68,8 @@ enum RobotColor {
     Purple = 0x7f00ff,
     //% block="blue"
     Blue = 0x0000ff,
+    //% block="cyan"
+    Cyan = 0x00ffff,
     //% block="green"
     Green = 0x00ff00,
     //% block="yellow"
