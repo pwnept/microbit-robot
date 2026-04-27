@@ -1,46 +1,23 @@
-# Micro:bit Robot for MakeCode
+# Vyse S1 Robot for MakeCode
 
-This extension contains **blocks for most 2 wheeled robots available for the micro:bit and Calliope mini**
-and **a web simulator**.
-This library is compatible with micro:bit V2, V1 and Calliope mini V3. However, the code space in V1 is limited and you may need to remove some features to fit your program.
+This extension contains **blocks for the Vyse S1 micro:bit robot** and **a web simulator**.
+This library is compatible with micro:bit V2 and V1. The code space in V1 is limited and you may need to remove some features to fit your program.
 
 > The library is still in beta and is subject to changes.
 
-![3 micro:bit robots](https://microsoft.github.io/microbit-robot/assets/images/robots.jpg)
-
--   [DFRobot Maqueen](#dfrobot-maq)
--   [DFRobot Maqueen Plus](#dfrobot-maq-plus)
--   [Elecfreaks Cutebot](#cutebot)
--   [Elecfreaks Cutebot PRO](#cutebot-pro)
--   [Forward Educations Smart Vehicle Kit](#fwdedu)
--   [InkSmith K8](#inksmith-k8)
--   [KeyStudio KS0426 Mini Smart Robot](#keystudio-mini)
--   [KittenBot Tabbybot](#kittenbot-TabbyBot)
--   [KittenBot MiniLFR](#kittenbot-mlfr)
--   [KittenBot Robotbit](#kittenbot-robotbit)
--   [KittenBot Nanobit](#kittenbot-nanobit)
--   [TinySuperLab MotionKit](#tinysuperlab)
--   [Yahboom Tiny:bit](#yahboom)
-
 ### Hardware requirements
 
-The firmware is designed for popular rover robots found in the micro:bit and Calliope mini ecosystem
-(and more can be added):
+The firmware is designed for the Vyse S1 chassis:
 
 -   2 motors that can be forward, backward, left, right turns. Precise detection of distance is **not** needed.
--   2 or more line sensors
--   a distance sensor, typically an ultrasonic sensor
-
-The following features are found often those robots:
-
--   one or more servo connectors
--   Buzzer
+-   2 line sensors
+-   an ultrasonic distance sensor
 -   RGB LEDs (headlights)
 -   Programmable LED strip (undercarriage)
 
 ## Using this extension
 
--   Open https://makecode.microbit.org or https://makecode.calliope.cc
+-   Open https://makecode.microbit.org
 -   Add this extension to your project by adding url [https://github.com/microsoft/microbit-robot](https://github.com/microsoft/microbit-robot)
 
 ## Tutorials
@@ -53,8 +30,6 @@ The following features are found often those robots:
 
 The simulator will load automatically in MakeCode once you use a robot block.
 It is designed to help programming this kind of robot.
-
-![Simulator](https://microsoft.github.io/microbit-robot/assets/docs/sim.gif)
 
 -   The simulator supports the line sensors and obstacle detectors.
 -   You can drag the robot using the mouse to reset the movements.
@@ -81,10 +56,8 @@ At the start of any robot program, you need add the block to select the robot mo
 > **This should be done before using any other blocks**.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 ```
-
-This is the only code that is specific to the robot you are using. The rest of the blocks are the same for all robots.
 
 ### Motors
 
@@ -107,7 +80,7 @@ input.onButtonPressed(Button.A, () => {
 
 #### Hint Why can't we use angles?
 
-Most micro:bit robots do not have sensors to measure the rotation of the wheels,
+The Vyse S1 does not have sensors to measure the rotation of the wheels,
 so it is not possible to compute rotation angles or distances. The only known value
 is that amount of power sent to the robot.
 
@@ -132,18 +105,6 @@ This block stops the robot.
 ```blocks
 input.onButtonPressed(Button.B, () => {
     robot.motorStop()
-})
-```
-
-### Arms
-
-Some robot support one or more servo attachments. 
-These are called **arms** in the library.
-Open a claw/arm (some robots support one or more servos)
-
-```blocks
-input.onButtonPressed(Button.B, () => {
-    robot.armOpen(0, 50)
 })
 ```
 
@@ -223,140 +184,7 @@ Use micro:code to remote control a robot using this library.
 ## Supported targets
 
 -   for PXT/microbit
--   for PXT/calliope
-
-## Supported Robots
-
-
-### DFRobot Maqueen V2+ <a id="dfrobot-maq"></a>
-
-![Photograph of the Maqueen](https://microsoft.github.io/microbit-robot/assets/images/maqueen.jpeg)
-
--   [Home](https://wiki.dfrobot.com/micro_Maqueen_for_micro_bit_SKU_ROB0148-EN)
-
-### DFRobot Maqueen Plus V2 <a id="dfrobot-maq-plus"></a>
-
-![Photograph of the Maqueen plus](https://microsoft.github.io/microbit-robot/assets/images/dfrobotmaqueenplusv2.jpg)
-
--   [Home](https://www.dfrobot.com/product-2026.html)
-
-### Elecfreaks Cutebot <a id="cutebot"></a>
-
-![Photograph of the Cutebot](https://microsoft.github.io/microbit-robot/assets/images/cutebot.jpeg)
-
--   [Home](https://www.elecfreaks.com/micro-bit-smart-cutebot.html)
-
-### Elecfreaks Cutebot PRO <a id="cutebot-pro"></a>
-
-![Photograph of the Cutebot PRO](https://microsoft.github.io/microbit-robot/assets/images/cutebotpro.jpeg)
-
--   [Home](https://shop.elecfreaks.com/products/elecfreaks-smart-cutebot-pro-v2-programming-robot-car-for-micro-bit)
-
-## Forward Education Smart Vehicle Kit <a id="fwdedu"></a>
-
-![Photograph of car made with Smart Vehicle Kit](https://microsoft.github.io/microbit-robot/assets/images/fwdedu.jpg)
-
--   [Home](https://forwardedu.com/compare-kits/)
-
-### InkSmith K8 <a id="inksmith-k8"></a>
-
-![Photograph of the K8](https://microsoft.github.io/microbit-robot/assets/images/inksmithk8.webp)
-
--   [Home](https://www.inksmith.ca/products/k8-robotics-kit)
-
-### KeyStudio KS0426 Mini Smart Robot <a id="keystudio-mini"></a>
-
--   [Home](https://wiki.keyestudio.com/KS0426_Keyestudio_Micro%EF%BC%9Abit_Mini_Smart_Robot_Car_Kit_V2)
-
-### KittenBot TabbyBot <a id="kittenbot-tabbybot"></a>
-
-![Photo of the TabbyBot](https://microsoft.github.io/microbit-robot/assets/images/tabbybot.png)
-
--   [Home](https://www.kittenbot.cc/products/kittenbot-tabbybot-programming-robotics-kit)
-
-### KittenBot MiniLFR <a id="kittenbot-mlfr"></a>
-
-![Photo of the MiniLFR robot](https://microsoft.github.io/microbit-robot/assets/images/minilfr.png)
-
--   [Home](https://www.kittenbot.cc/products/kittenbot-minilfr-programmable-robot-car-kit-for-microbit)
-
-### KittenBot Robotbit <a id="kittenbot-robotbit"></a>
-
-![Photo of the Robotbit robot](https://microsoft.github.io/microbit-robot/assets/images/robotbit.webp)
-
--   [Home](https://www.kittenbot.cc/products/robotbit-robotics-expansion-board-for-micro-bit)
-
-### KittenBot Nanobit <a id="kittenbot-nanobit"></a>
-
-![Photo of the Nanobit robot](https://microsoft.github.io/microbit-robot/assets/images/nanobit.webp)
-
--   [Home](https://www.kittenbot.cc/products/kittenbot-nanobit-with-kb-link-downloader-for-makecode-python-and-arduino-programming)
-
-### TinySuperLab MotionKit V2 <a id="tinysuperlab"></a>
-
-![Photograph of the MotionKit v2](https://microsoft.github.io/microbit-robot/assets/images/motionkitv2.png)
-
--   [Home](https://tinysuperlab.com)
-
-### Yahboom Tiny:bit <a id="yahboom"></a>
-
-![Photograph of the Tiny:bit](https://microsoft.github.io/microbit-robot/assets/images/tinybit.jpeg)
-
--   [Home](http://www.yahboom.net/study/Tiny:bit)
-
-### Kitronik Motor Driver V2 RC Car <a id="kitronik-motor-driver-rc-car"></a>
-
-![Photograph of the Kitronik MotorDriver V2 RC Car](https://pxt.azureedge.net/blob/cfdf4d024aa79a21e0492ec131098debc937dfa7/static/mb/projects/rc-car/painted.jpg)
-
--   [Build instructions](https://makecode.microbit.org/projects/rc-car)
-
-Note that the [Kitronik motor driver v2](https://kitronik.co.uk/products/5620-motor-driver-board-for-the-bbc-microbit-v2)
-is discontinued.
-
 
 ## License
 
 MIT
-
-## Acknoledgements
-
-- [Anthony Jacques](https://twitter.com/Syd_Filmore) for a suggestions on the motor block API design.
-
-## Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-### How to prepare a pull request <a id="new-robot"></a>
-
-To add a new robot to the list, prepare a pull request in [microsoft/microbit-robot](https://github.com/microsoft/microbit-robot) with:
-
--   a new class extending `Robot` and configuring the hardware (see other robots)
--   a global field instance instantiating the robot (see other robots)
--   a URL in the jsdocs of the class pointing to the robot homepage
--   add `main{company}{productname}.ts` file that starts the robot
--   add `pxt-{company}{productname}.json` file that overrides the test files to load `main{company}{productname}.ts`
--   add call to `mkc -c pxt-{company}{productname}.json` in `.github/workflows/makecode.yml`
--   add image under `assets`
-
-Make sure to test and tune the configuration options in the robot class for your particular
-chassis/motor/line detectors. You may want to tweak some of the constants in the robot class to optimize the behavior of the robot.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
-
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script

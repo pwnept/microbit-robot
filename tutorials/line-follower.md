@@ -13,7 +13,7 @@ in the dropdown. After restarting, you should also see the robot simulator.
 
 ```blocks
 // @highlight
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 ```
 
 ## Detect when the robot is over the Line

@@ -11,7 +11,7 @@ in the dropdown. After restarting, you should also see the robot simulator.
 
 ```blocks
 // @highlight
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 ```
 
 ## Light
@@ -20,7 +20,7 @@ Drag a `||robot:robot set color||` to set the color of LEDs on the robot.
 If the robot does not have an RGB color, the intensity of the color will be used.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 // @highlight
 robot.setColor(0xff0000)
 ```
@@ -31,7 +31,7 @@ Drag a `||robot:robot play tone||` to play a tone of the robot.
 Most robot have a buzzer or the micro:bit V2 buzzer will be used.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 robot.setColor(0xff0000)
 // @highlight
 robot.playTone(262, music.beat(BeatFraction.Whole))

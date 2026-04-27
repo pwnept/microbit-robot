@@ -12,7 +12,7 @@ in the dropdown. After restarting, you should also see the robot simulator.
 
 ```blocks
 // @highlight
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 ```
 
 ## Simulator Pro Tips! @showdialog
@@ -32,7 +32,7 @@ It will instruct the robot to go full throttle on both motors.
 You will see the robot moving forward in the robot simulator.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 // @highlight
 robot.motorSteer(0, 100)
 ```
@@ -42,7 +42,7 @@ robot.motorSteer(0, 100)
 Use the `||robot:robot stop||` block to stop all motors after 1 second.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 robot.motorSteer(0, 100)
 basic.pause(1000)
 // @highlight
@@ -56,7 +56,7 @@ of forces between the two motors. Positive steering will favor the right motor
 where the left motor stops spinning at 100, and starts going negative beyond 100.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 robot.motorSteer(0, 100)
 basic.pause(1000)
 robot.motorStop()
@@ -71,7 +71,7 @@ Add another `||robot:robot motor run with steering 200||`. The left motor will s
 and the right motor will spin forward.
 
 ```blocks
-robot.elecfreaksCuteBot.start()
+robot.vyseS1.start()
 robot.motorSteer(0, 100)
 basic.pause(1000)
 robot.motorStop()

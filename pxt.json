@@ -1,6 +1,6 @@
 {
     "name": "microbit-robot",
-    "version": "2.7.10",
+    "version": "2.7.11",
     "dependencies": {
         "core": "*",
         "radio": "*",
@@ -30,23 +30,9 @@
         "drivers/sim.ts",
         "drivers/rccar.ts",
         "robots/robot.ts",
-        "robots/keystudiominismartrobot.ts",
         "robots/yahboomtinybit.ts",
-        "robots/elecfreakscutebot.ts",
-        "robots/elecfreakscutebotpro.ts",
-        "robots/dfrobotmaqueen.ts",
-        "robots/dfrobotmaqueenplusv2.ts",
-        "robots/kittenbotminilfr.ts",
-        "robots/kittenbotrobotbit.ts",
-        "robots/kittenbotnanobit.ts",
-        "robots/kittenbottabbybot.ts",
-        "robots/kitronikmotordriverrccar.ts",
-        "robots/inksmithk8.ts",
         "robots/sim.ts",
         "constants.ts",
-        "robots/knotechcallibot.ts",
-        "robots/tslmotionkit2.ts",
-        "_locales/de/microbit-robot-strings.json",
         "tutorials/getting-started.md",
         "tutorials/light-and-sound.md",
         "tutorials/line-follower.md"
@@ -55,9 +41,6 @@
         "test.ts"
     ],
     "fileDependencies": {
-        "kittenbotnanobit.ts": "target:microbit",
-        "kittenbotrobotbit.ts": "target:microbit",
-        "kittenbottabbybot.ts": "target:microbit",
         "yahboomtinybit.ts": "target:microbit",
         "microbit.ts": "target:microbit"
     },
@@ -66,8 +49,7 @@
         "targetId": "microbit"
     },
     "supportedTargets": [
-        "microbit",
-        "calliopemini"
+        "microbit"
     ],
     "preferredEditor": "tsprj"
 }

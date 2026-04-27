@@ -1,7 +1,7 @@
 import { BotSpec, toWheels } from "./specs"
 
 const spec: BotSpec = {
-    name: "Yahboom Tiny:bit",
+    name: "Vyse S1",
     productId: 0x345f8369,
     mass: 1,
     weight: 179,

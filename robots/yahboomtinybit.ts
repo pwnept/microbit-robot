@@ -1,5 +1,4 @@
 namespace robot {
-    // https://github.com/YahboomTechnology/Tiny-bitLib/blob/master/main.ts
     const PWM_ADD = 0x01
     const MOTOR = 0x02
     const RGB = 0x01
@@ -13,7 +12,7 @@ namespace robot {
         pins.i2cWriteBuffer(PWM_ADD, buf)
     }
 
-    class YahboomTinybitRobot extends robots.Robot {
+    class VyseS1Robot extends robots.Robot {
         constructor() {
             super(0x345f8369)
             this.leds = new drivers.WS2812bLEDStrip(DigitalPin.P12, 2)
@@ -128,8 +127,8 @@ namespace robot {
     }
 
     /**
-     * Yahboom Tiny:bit
+     * Vyse S1
      */
-    //% fixedInstance whenUsed block="yahboom tiny:bit" weight=99
-    export const yahboomTinyBit = new RobotDriver(new YahboomTinybitRobot())
+    //% fixedInstance whenUsed block="Vyse S1" weight=99
+    export const vyseS1 = new RobotDriver(new VyseS1Robot())
 }
